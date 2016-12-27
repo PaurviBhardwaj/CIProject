@@ -38,3 +38,8 @@
 .WholeContent h2{
   text-align: center;
 }
+
+#button{
+  display: inline;
+  background-color: black;
+}

@@ -10,6 +10,7 @@ import {blue400, blue700} from 'material-ui/styles/colors';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
+
 injectTapEventPlugin();
 
 const muiTheme = getMuiTheme({
@@ -28,6 +29,7 @@ ReactDOM.render(
             <Route path="App" component={App}>
               <IndexRoute component={home}/>
               <Route path="create" component={createRepo}/>
+              <Route path="branch" component={home}/>
             </Route>
         </Router>
    </MuiThemeProvider>
