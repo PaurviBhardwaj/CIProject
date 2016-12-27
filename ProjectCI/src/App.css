@@ -22,7 +22,9 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+/* For Header */
 
+/* For footer*/
 #bloc1, #bloc2
 {
     display:inline;
@@ -34,7 +36,13 @@
 #bloc2{
   float: right;
 }
-
+/* For Home Page*/
 .WholeContent h2{
   text-align: center;
+  
+}
+.WholeContent{
+margin-top: 80px;
+width: 80%;
+margin-left: 50px;
 }
