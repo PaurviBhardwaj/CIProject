@@ -34,7 +34,11 @@ export default class Header extends React.Component {
     render() {
         const nav = <div style={navbar}>
                        <ul style={navbar.ul}>
+<<<<<<< HEAD
                          <li style={navbar.li}><IndexLink style={navbar.li2} to="/" activeClassName="active"><FlatButton label="Home" hoverColor="#006080" labelStyle={{color:'white', fontSize: 20}}/><FlatButton label="Logout" hoverColor="#006080" labelStyle={{color:'white', fontSize: 20}}/></IndexLink></li>
+=======
+                           
+>>>>>>> c73894185b0ac392320f4e1eb4414f144233243d
                        </ul>
                     </div>
       return (
