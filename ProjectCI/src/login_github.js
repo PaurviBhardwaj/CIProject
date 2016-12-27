@@ -8,9 +8,7 @@ class login extends React.Component {
       return (
          <div>
             <IndexLink to="/App" activeClassName="active"><FlatButton label="login" hoverColor="#006080" labelStyle={{color:'black', fontSize: 20}}/></IndexLink>
-            <div className="main" >
-                    {this.props.children}
-            </div>
+            
          </div>
       );
    }

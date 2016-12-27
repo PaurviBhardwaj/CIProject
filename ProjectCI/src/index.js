@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import home from './Home'
 import login from './login_github'
+import createRepo from './CreateRepository'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {blue400, blue700} from 'material-ui/styles/colors';
@@ -21,9 +22,11 @@ const muiTheme = getMuiTheme({
 
 ReactDOM.render(
     <MuiThemeProvider muiTheme={muiTheme}>
-          <Router history={hashHistory}>
-            <Route path="/" component={login}>
-                <Route path="App" component={App} />
+        <Router history={hashHistory}>
+            <Route path="/" component={login}/>
+            <Route path="App" component={App}>
+              <IndexRoute component={home}/>
+              <Route path="create" component={createRepo}/>
             </Route>
         </Router>
    </MuiThemeProvider>
