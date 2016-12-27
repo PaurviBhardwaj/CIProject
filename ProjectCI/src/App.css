@@ -23,7 +23,9 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+/* For Header */
 
+/* For footer*/
 #bloc1, #bloc2
 {
     display:inline;
@@ -35,14 +37,46 @@
 #bloc2{
   float: right;
 }
-
+/* For Home Page*/
 .WholeContent h2{
   text-align: center;
 }
+
 
 
 /*For login_github*/
 
 .log_github{
   margin-top: 200px;
+}
+
+#button{
+  display: inline;
+  background-color: black;
+  
+}
+.WholeContent{
+margin-top: 80px;
+width: 80%;
+margin-left: 50px;
+}
+/*For BuildReport*/
+.listbox
+{
+margin-top: 40px;
+margin-bottom: 100px;
+}
+.dialog
+{
+	
+	padding: 10px;
+}
+.paper
+{
+	padding: 20px;
+	
+}
+.head
+{
+	margin-top: 100px;
 }

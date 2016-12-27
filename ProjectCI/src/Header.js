@@ -9,12 +9,14 @@ const navbar = {
       listStyleType: "none",
       margin: 0,
       padding: 0,
-      overflow: 'hidden'
+      overflow: 'hidden',
+
     },
     li : {
       float: 'left',
       color: 'white',
-      fontSize: 20
+      fontSize: 20,
+       display:'inline'
     },
     li2 : {
       display: 'block',
@@ -36,8 +38,8 @@ export default class Header extends React.Component {
                        <ul style={navbar.ul}>
                          <li style={navbar.li}><IndexLink style={navbar.li2} to="/App" activeClassName="active">
                          <FlatButton label="Home" hoverColor="#006080" labelStyle={{color:'white', fontSize: 20}}/>
-                         </IndexLink>
-                         <Link to="/logout"  activeClassName="active">
+                         </IndexLink></li>
+                         <li style={navbar.li}><Link to="/logout" style={navbar.li2} activeClassName="active">
                          <FlatButton label="Logout" hoverColor="#006080" labelStyle={{color:'white', fontSize: 20}}/>
                          </Link>
                          </li>
@@ -50,6 +52,5 @@ export default class Header extends React.Component {
               iconElementRight={nav}
             />
       );
-
     }
 }

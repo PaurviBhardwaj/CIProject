@@ -5,12 +5,16 @@ import Dialog from 'material-ui/Dialog';
 import SvgIcon from 'material-ui/SvgIcon';
 import ActionInfo from 'material-ui/svg-icons/action/info';
 import './App.css';
+import AlarmOff from 'react-icons/lib/md/alarm-off';
+import AlarmOn from 'react-icons/lib/md/alarm-on';
 import Divider from 'material-ui/Divider';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
-import {Table, TableBody,  TableRow, TableRowColumn} from 'material-ui/Table';
+import {Table, TableBody,  TableRow, TableRowColumn, TableHeader, TableHeaderColumn} from 'material-ui/Table';
 import {IndexLink, Link} from 'react-router';
-import Icon from 'react-icon-base'
+import Icon from 'react-icon-base';
+import {Tabs, Tab} from 'material-ui/Tabs';
+import Tooltip from 'rc-tooltip'
 const Plusicon = () => (
     <Icon viewBox="0 0 40 40">
       <g><path d="m35.9 16.4v4.3q0 0.9-0.6 1.5t-1.5 0.7h-9.3v9.2q0 0.9-0.6 1.6t-1.5 0.6h-4.3q-0.9 0-1.5-0.6t-0.7-1.6v-9.2h-9.3q-0.9 0-1.5-0.7t-0.6-1.5v-4.3q0-0.9 0.6-1.5t1.5-0.6h9.3v-9.3q0-0.9 0.7-1.5t1.5-0.6h4.3q0.9 0 1.5 0.6t0.6 1.5v9.3h9.3q0.9 0 1.5 0.6t0.6 1.5z"/></g>
@@ -39,204 +43,240 @@ FloatStyle:{
 	
 }
 };
+const tableData = [
+  {
+    Reponame: 'Movie Search',
+    status:<AlarmOn data-tip='success' color='green' size={30} />,
+    lastfail:'15-06-2016',
+    lastpass:'20-11-2016',
+    configured: true,
+  },
+  {
+    Reponame: 'D3',
+    status: <AlarmOff color='red' size={30} />,
+    lastfail:'15-06-2016',
+    lastpass:'20-11-2016',
+    configured: true,
+  },
+  {
+    Reponame: 'Movie App',
+    status: <AlarmOff color='red' size={30} />,
+    lastfail:'15-06-2016',
+    lastpass:'20-11-2016',
+    configured: false,
+  },
+  {
+    Reponame: 'Javascript',
+    status: <AlarmOff color='red' size={30} />,
+    lastfail:'15-06-2016',
+    lastpass:'20-11-2016',
+    configured: false,
+  },
+  {
+    Reponame: 'Sample repo',
+    status: <AlarmOn color='green' size={30} />,
+    lastfail:'15-06-2016',
+    lastpass:'20-11-2016',
+    configured: true,
+  },
+  {
+    Reponame: 'Javascript',
+    status: <AlarmOn color='green' size={30} />,
+    lastfail:'15-06-2016',
+    lastpass:'20-11-2016',
+    configured: true,
+  },
+  {
+    Reponame: 'React',
+    status: <AlarmOn color='green' size={30} />,
+    lastfail:'15-06-2016',
+    lastpass:'20-11-2016',
+    configured: false,
+   },
+    {
+    Reponame: 'Javascript',
+    status: <AlarmOff color='red' size={30} />,
+    lastfail:'15-06-2016',
+    lastpass:'20-11-2016',
+    configured: false,
+  },
+  {
+    Reponame: 'Sample repo',
+    status: <AlarmOn color='green' size={30} />,
+    lastfail:'15-06-2016',
+    lastpass:'20-11-2016',
+    configured: true,
+  },
+  {
+    Reponame: 'Javascript',
+    status: <AlarmOn color='green' size={30} />,
+    lastfail:'15-06-2016',
+    lastpass:'20-11-2016',
+    configured: true,
+  },
+  {
+    Reponame: 'React',
+    status: <AlarmOn color='green' size={30} />,
+    lastfail:'15-06-2016',
+    lastpass:'20-11-2016',
+    configured: false,
+   }
+];
+const tableData1 = [
+  {
+    Reponame: 'Movie React',
+    status: <AlarmOn color='green' size={30} />,
+    lastfail:'15-06-2016',
+    lastpass:'20-11-2016',
+    configured: true,
+  },
+  {
+    Reponame: 'Angular',
+    status: <AlarmOff color='red' size={30} />,
+    lastfail:'15-06-2016',
+    lastpass:'20-11-2016',
+    configured: true,
+  },
+  {
+    Reponame: 'Application',
+    status: <AlarmOff color='red' size={30} />,
+    lastfail:'15-06-2016',
+    lastpass:'20-11-2016',
+    configured: false,
+  },
+   {
+    Reponame: 'Javascript',
+    status: <AlarmOff color='red' size={30} />,
+    lastfail:'15-06-2016',
+    lastpass:'20-11-2016',
+    configured: false,
+  },
+  {
+    Reponame: 'Sample repo',
+    status: <AlarmOn color='green' size={30} />,
+    lastfail:'15-06-2016',
+    lastpass:'20-11-2016',
+    configured: true,
+  },
+  {
+    Reponame: 'Javascript',
+    status: <AlarmOn color='green' size={30} />,
+    lastfail:'15-06-2016',
+    lastpass:'20-11-2016',
+    configured: true,
+  },
+  {
+    Reponame: 'React',
+    status: <AlarmOn color='green' size={30} />,
+    lastfail:'15-06-2016',
+    lastpass:'20-11-2016',
+    configured: false,
+   },
+  {
+    Reponame: 'JQuery',
+    status: <AlarmOff color='red' size={30} />,
+    lastfail:'15-06-2016',
+    lastpass:'20-11-2016',
+    configured: false,
+  },
+  {
+    Reponame: 'Sample Data',
+    status: <AlarmOn color='green' size={30} />,
+    lastfail:'15-06-2016',
+    lastpass:'20-11-2016',
+    configured: true,
+  },
+  {
+    Reponame: 'Bootstrap',
+    status: <AlarmOn color='green' size={30} />,
+    lastfail:'15-06-2016',
+    lastpass:'20-11-2016',
+    configured: true,
+  },
+  {
+    Reponame: 'HTML',
+    status: <AlarmOn color='green' size={30} />,
+    lastfail:'15-06-2016',
+    lastpass:'20-11-2016',
+    configured: false,
+   }
+];
 class Home extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 'Configure',
+    };
+  }
+
+  handleChange = (value) => {
+    this.setState({
+      value: value,
+    });
+  };
   render() {
 
-    return (<div className='WholeContent'>
+    return (<div className='WholeContent' style={{marginBottom:100}}>
     	<h2>List of Repositories</h2>
-    	<Paper className='mainItems' style={styles.PaperStyle}>
+    	<Tabs
+        value={this.state.value}
+        onChange={this.handleChange}
+      >
+        <Tab label="configured" value="Configure" >
+          <div>
+          <Paper className='mainItems' style={styles.PaperStyle}>
 		<Table>
+			<TableHeader displaySelectAll={false} adjustForCheckbox={false}>
+	           		<TableRow>
+	           	<TableHeaderColumn><b>Repository</b></TableHeaderColumn>
+                  <TableHeaderColumn><b>Status</b></TableHeaderColumn>
+	              <TableHeaderColumn><b>Last Fail</b></TableHeaderColumn>
+	              <TableHeaderColumn><b>Last Pass</b></TableHeaderColumn>
+	            </TableRow>
+          	</TableHeader>
     		<TableBody  displayRowCheckbox={false}>
-      		<TableRow >
-        		<TableRowColumn>MovieSearch</TableRowColumn>
-        		<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Plusicon/></a>
-        		</TableRowColumn>
-        		<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Configicon/></a>
-        		</TableRowColumn>
-       			<TableRowColumn style={{width:20}}><a href="http://www.google.com"><ActionInfo/></a>
-       			</TableRowColumn>
-        		<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><EditIcon/></a>
-        		</TableRowColumn>
-     		</TableRow>
-      		<TableRow >
-        		<TableRowColumn>MovieSearch</TableRowColumn>
-        		<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Plusicon/></a>
-        		</TableRowColumn>
-        		<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Configicon/></a>
-        		</TableRowColumn>
-        		<TableRowColumn style={{width:20}}><a href="http://www.google.com"><ActionInfo /></a>
-        		</TableRowColumn>
-        		<TableRowColumn style={{width:20}}><a href="http://www.google.com"><EditIcon/></a>
-        		</TableRowColumn>
-      		</TableRow>
-	     	<TableRow >
-	        	<TableRowColumn>MovieSearch</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Plusicon/></a>
-        		</TableRowColumn>
-        		<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Configicon/></a>
-        		</TableRowColumn>
-	       		<TableRowColumn style={{width:20}}><a href="http://www.google.com"><ActionInfo/></a>
-	       		</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.google.com"><EditIcon/></a>
-	        	</TableRowColumn>
-	        </TableRow>
-	        <TableRow >
-	        	<TableRowColumn>MovieSearch</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Plusicon/></a>
-        		</TableRowColumn>
-        		<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Configicon/></a>
-        		</TableRowColumn>
-	       		<TableRowColumn style={{width:20}}><a href="http://www.google.com"><ActionInfo/></a>
-	       		</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.google.com"><EditIcon/></a>
-	        	</TableRowColumn>
-	        </TableRow>
-	        <TableRow >
-	        	<TableRowColumn>MovieSearch</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Plusicon/></a>
-        		</TableRowColumn>
-        		<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Configicon/></a>
-        		</TableRowColumn>
-	       		<TableRowColumn style={{width:20}}><a href="http://www.google.com"><ActionInfo/></a>
-	       		</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.google.com"><EditIcon/></a>
-	        	</TableRowColumn>
-	        </TableRow>
-	        <TableRow >
-	        	<TableRowColumn>MovieSearch</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Plusicon/></a>
-        		</TableRowColumn>
-        		<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Configicon/></a>
-        		</TableRowColumn>
-	       		<TableRowColumn style={{width:20}}><a href="http://www.google.com"><ActionInfo/></a>
-	       		</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.google.com"><EditIcon/></a>
-	        	</TableRowColumn>
-	        </TableRow>
-	        <TableRow >
-	        	<TableRowColumn>MovieSearch</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Plusicon/></a>
-        		</TableRowColumn>
-        		<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Configicon/></a>
-        		</TableRowColumn>
-	       		<TableRowColumn style={{width:20}}><a href="http://www.google.com"><ActionInfo/></a>
-	       		</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.google.com"><EditIcon/></a>
-	        	</TableRowColumn>
-	        </TableRow>
-	        <TableRow >
-	        	<TableRowColumn>MovieSearch</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Plusicon/></a>
-        		</TableRowColumn>
-        		<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Configicon/></a>
-        		</TableRowColumn>
-	       		<TableRowColumn style={{width:20}}><a href="http://www.google.com"><ActionInfo/></a>
-	       		</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.google.com"><EditIcon/></a>
-	        	</TableRowColumn>
-	        </TableRow>
-	        <TableRow >
-	        	<TableRowColumn>MovieSearch</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Plusicon/></a>
-        		</TableRowColumn>
-        		<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Configicon/></a>
-        		</TableRowColumn>
-	       		<TableRowColumn style={{width:20}}><a href="http://www.google.com"><ActionInfo/></a>
-	       		</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.google.com"><EditIcon/></a>
-	        	</TableRowColumn>
-	        </TableRow>
-	        <TableRow >
-	        	<TableRowColumn>MovieSearch</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Plusicon/></a>
-        		</TableRowColumn>
-        		<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Configicon/></a>
-        		</TableRowColumn>
-	       		<TableRowColumn style={{width:20}}><a href="http://www.google.com"><ActionInfo/></a>
-	       		</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.google.com"><EditIcon/></a>
-	        	</TableRowColumn>
-	        </TableRow>
-	        <TableRow >
-	        	<TableRowColumn>MovieSearch</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Plusicon/></a>
-        		</TableRowColumn>
-        		<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Configicon/></a>
-        		</TableRowColumn>
-	       		<TableRowColumn style={{width:20}}><a href="http://www.google.com"><ActionInfo/></a>
-	       		</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.google.com"><EditIcon/></a>
-	        	</TableRowColumn>
-	        </TableRow>
-	        <TableRow >
-	        	<TableRowColumn>MovieSearch</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Plusicon/></a>
-        		</TableRowColumn>
-        		<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Configicon/></a>
-        		</TableRowColumn>
-	       		<TableRowColumn style={{width:20}}><a href="http://www.google.com"><ActionInfo/></a>
-	       		</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.google.com"><EditIcon/></a>
-	        	</TableRowColumn>
-	        </TableRow>
-	        <TableRow >
-	        	<TableRowColumn>MovieSearch</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Plusicon/></a>
-        		</TableRowColumn>
-        		<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Configicon/></a>
-        		</TableRowColumn>
-	       		<TableRowColumn style={{width:20}}><a href="http://www.google.com"><ActionInfo/></a>
-	       		</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.google.com"><EditIcon/></a>
-	        	</TableRowColumn>
-	        </TableRow>
-	        <TableRow >
-	        	<TableRowColumn>MovieSearch</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Plusicon/></a>
-        		</TableRowColumn>
-        		<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Configicon/></a>
-        		</TableRowColumn>
-	       		<TableRowColumn style={{width:20}}><a href="http://www.google.com"><ActionInfo/></a>
-	       		</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.google.com"><EditIcon/></a>
-	        	</TableRowColumn>
-	        </TableRow>
-	        <TableRow >
-	        	<TableRowColumn>MovieSearch</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Plusicon/></a>
-        		</TableRowColumn>
-        		<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Configicon/></a>
-        		</TableRowColumn>
-	       		<TableRowColumn style={{width:20}}><a href="http://www.google.com"><ActionInfo/></a>
-	       		</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.google.com"><EditIcon/></a>
-	        	</TableRowColumn>
-	        </TableRow>
-	        <TableRow >
-	        	<TableRowColumn>MovieSearch</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Plusicon/></a>
-        		</TableRowColumn>
-        		<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Configicon/></a>
-        		</TableRowColumn>
-	       		<TableRowColumn style={{width:20}}><a href="http://www.google.com"><ActionInfo/></a>
-	       		</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.google.com"><EditIcon/></a>
-	        	</TableRowColumn>
-	        </TableRow>
-	        <TableRow >
-	        	<TableRowColumn>MovieSearch</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Plusicon/></a>
-        		</TableRowColumn>
-        		<TableRowColumn style={{width:20}}><a href="http://www.gmail.com"><Configicon/></a>
-        		</TableRowColumn>
-	       		<TableRowColumn style={{width:20}}><a href="http://www.google.com"><ActionInfo/></a>
-	       		</TableRowColumn>
-	        	<TableRowColumn style={{width:20}}><a href="http://www.google.com"><EditIcon/></a>
-	        	</TableRowColumn>
-	        </TableRow>
+      		{tableData.map( (row, index) => (
+      			 <TableRow key={index} selected={row.selected}>
+                <TableRowColumn><Link to="/App/Build" style={{textDecoration:'none',color:'blue',fontSize:20}} activeClassName="active">{row.Reponame}</Link></TableRowColumn>
+                <TableRowColumn>{row.status}</TableRowColumn>
+                <TableRowColumn>{row.lastfail}</TableRowColumn>
+                <TableRowColumn>{row.lastpass}</TableRowColumn>
+              </TableRow>
+            ))}
 	 	    </TableBody>
   		</Table>
    	</Paper>
+           </div>
+        </Tab>
+        <Tab label="Not configured" value="Not configured">
+          <div>
+            <Paper className='mainItems' style={styles.PaperStyle}>
+		<Table>
+			<TableHeader displaySelectAll={false} adjustForCheckbox={false}>
+	            <TableRow>
+	              <TableHeaderColumn ><b>Repository</b></TableHeaderColumn>
+	              <TableHeaderColumn ><b>Status</b></TableHeaderColumn>
+	              <TableHeaderColumn ><b>Last Fail</b></TableHeaderColumn>
+	              <TableHeaderColumn ><b>Last Pass</b></TableHeaderColumn>
+	            </TableRow>
+          	</TableHeader>
+    		<TableBody  displayRowCheckbox={false}>
+      		{tableData1.map( (row, index) => (
+              <TableRow key={index} selected={row.selected}>
+                <TableRowColumn><Link to="/App/Build"  style={{textDecoration:'none',color:'blue',fontSize:20}} activeClassName="active">{row.Reponame}</Link></TableRowColumn>
+                <TableRowColumn>{row.status}</TableRowColumn>
+                <TableRowColumn>{row.lastfail}</TableRowColumn>
+                <TableRowColumn>{row.lastpass}</TableRowColumn>
+              </TableRow>
+              ))}
+	 	    </TableBody>
+  		</Table>
+   	</Paper>
+          </div>
+        </Tab>
+      </Tabs>
+    
 	<IndexLink to="/App/create" activeClassName="active"><FloatingActionButton style={styles.FloatStyle}><ContentAdd /></FloatingActionButton></IndexLink>
 	</div>)
 

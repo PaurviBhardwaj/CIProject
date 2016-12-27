@@ -9,6 +9,9 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {blue400, blue700} from 'material-ui/styles/colors';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import Branch from './Branch'
+import TestSettings from './testSettings'
+import BuildReport from './buildReport'
 
 injectTapEventPlugin();
 
@@ -28,6 +31,10 @@ ReactDOM.render(
             <Route path="App" component={App}>
               <IndexRoute component={home}/>
               <Route path="create" component={createRepo}/>
+              <Route path="branch" component={Branch}/>
+              <Route path="branchpath" component={TestSettings}/>
+              <Route path="temp" component={BuildReport}/>
+              <Route path="test" component={TestSettings}/>
             </Route>
         </Router>
    </MuiThemeProvider>
