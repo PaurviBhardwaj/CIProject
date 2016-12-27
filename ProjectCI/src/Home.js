@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-<<<<<<< HEAD
 import Paper from 'material-ui/Paper';
 import FlatButton from 'material-ui/FlatButton';
 import Dialog from 'material-ui/Dialog';
@@ -10,7 +9,7 @@ import Divider from 'material-ui/Divider';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import {Table, TableBody,  TableRow, TableRowColumn} from 'material-ui/Table';
-import {Link} from 'react-router'
+import {IndexLink, Link} from 'react-router';
 import Icon from 'react-icon-base'
 const Plusicon = () => (
     <Icon viewBox="0 0 40 40">
@@ -238,27 +237,9 @@ class Home extends Component {
 	 	    </TableBody>
   		</Table>
    	</Paper>
-	<FloatingActionButton style={styles.FloatStyle}><ContentAdd /></FloatingActionButton>
+	<IndexLink to="/App/create" activeClassName="active"><FloatingActionButton style={styles.FloatStyle}><ContentAdd /></FloatingActionButton></IndexLink>
 	</div>)
-=======
-import {GridList, GridTile} from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
-import Dialog from 'material-ui/Dialog';
-import {IndexLink, Link} from 'react-router';
 
-class home extends Component {
-  render() {
-
-    return (
-    	<div>
-      <h1 style={{marginTop:250}}>hi</h1>
-      <IndexLink to="/App/create" activeClassName="active"><FlatButton label="Create" hoverColor="#006080" labelStyle={{color:'black', fontSize: 20}}/></IndexLink>
-            </div>
-      );
->>>>>>> c73894185b0ac392320f4e1eb4414f144233243d
   }
 }
 
