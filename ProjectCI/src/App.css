@@ -22,3 +22,19 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+#bloc1, #bloc2
+{
+    display:inline;
+
+}
+#bloc1{
+  float: left;
+}
+#bloc2{
+  float: right;
+}
+
+.WholeContent h2{
+  text-align: center;
+}

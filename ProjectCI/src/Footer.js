@@ -37,7 +37,7 @@ export default class Footer extends React.Component {
         return (
             <footer style={styles.mainStyles}>
                 <div style={{textAlign: 'center',color:'darkgrey'}}>Copyright @ 2016</div>  
-                <div id="block_container" style={{marginTop:10}} >
+                <div id="block_container" style={{marginTop:10,color:'white'}} >
                     <div id='bloc1'><b>JARVIS</b></div>  
                     <div id='bloc2' >Connect Us on : 
                         <a href='#'><Facebook /></a>
