@@ -24,6 +24,7 @@ ReactDOM.render(
     <MuiThemeProvider muiTheme={muiTheme}>
         <Router history={hashHistory}>
             <Route path="/" component={login}/>
+            <Route path="logout" component={login}/>
             <Route path="App" component={App}>
               <IndexRoute component={home}/>
               <Route path="create" component={createRepo}/>
