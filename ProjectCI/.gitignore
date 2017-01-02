@@ -4,6 +4,10 @@
 node_modules
 scripts
 config
+<<<<<<< HEAD
+=======
+
+>>>>>>> f602f7577992b6ed10d7a7b27d49903ac8cb65bd
 # testing
 coverage
 
