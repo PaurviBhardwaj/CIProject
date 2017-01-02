@@ -64,7 +64,7 @@ class CreateRepository extends Component {
   
     return (
       <Grid>
-        <Row style={{marginTop:80, marginBottom:120}}>
+        <Row style={{marginTop:60, marginBottom:60}}>
           <Col xs={12}>
             <Row center="xs">
               <Col xs={10}>
