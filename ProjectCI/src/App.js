@@ -2,20 +2,19 @@ import React, { Component } from 'react';
 import Header from './Header'
 import Footer from './Footer'
 
-
 class App extends Component {
-  render() {
-    console.log("hello");
-    return (
-             <div>
-                <Header />
+ render() {
+   return (
+     <div>
+               <Header />
+             
 
                 <div className="main" >
                     {this.props.children}
                 </div>
-
-                <Footer />
-            </div>
+                <Footer/>
+               
+    </div>
     );
   }
 }

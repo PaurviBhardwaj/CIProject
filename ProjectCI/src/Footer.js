@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.css'
+import {Grid,Row,Col} from 'react-flexbox-grid'
 import Icon from 'react-icon-base'
 const Facebook = () => (
     <Icon viewBox="0 0 40 40">
@@ -26,27 +27,28 @@ export default class Footer extends React.Component {
     	const styles = {
             mainStyles:{
                 height:50,
-                background:'grey',
-                padding: 10,
-                color: '#fff',
+                background:'#2a8ced',
+                color: '#FFF',
                 fontFamily: 'sans-serif',
                 fontSize: 14,
-                position: 'fixed',bottom:0, left: 0, right: 0 
+                bottom:0, left: 0, right: 0 
             }
         };
         return (
             <footer style={styles.mainStyles}>
-                <div style={{textAlign: 'center',color:'darkgrey'}}>Copyright @ 2016</div>  
-                <div id="block_container" style={{marginTop:10,color:'white'}} >
-                    <div id='bloc1'><b>JARVIS</b></div>  
-                    <div id='bloc2' >Connect Us on : 
-                        <a href='#'><Facebook /></a>
-                        <a href='#'><Googleplus /></a>
-                        <a href='#'><Linkedin /></a>
-                        <a href='#'><Twitter /></a>
-                    </div>  
-                </div>
+                <Grid>
+                    <Row center="xs">
+                        <Col xs={4}><b>KI</b></Col>
+                        <Col xs={4}>Copyright @ 2016</Col>  
+                        <Col xs={4}>Connect Us on : 
+                            <a href='#'><Facebook /></a>
+                            <a href='#'><Googleplus /></a>
+                            <a href='#'><Linkedin /></a>
+                            <a href='#'><Twitter /></a>
+                        </Col>  
+                    </Row>
+                </Grid>
             </footer>
-        )
+            )
     }
 }

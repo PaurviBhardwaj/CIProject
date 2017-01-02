@@ -16,26 +16,26 @@ import BuildReport from './buildReport'
 injectTapEventPlugin();
 
 const muiTheme = getMuiTheme({
- palette: {
-   textColor: blue700,
-   primary1Color: blue400,
-   primary2Color: blue700
- }
+palette: {
+  textColor: blue700,
+  primary1Color: blue400,
+  primary2Color: blue700
+}
 });
 
 ReactDOM.render(
-    <MuiThemeProvider muiTheme={muiTheme}>
-        <Router history={hashHistory}>
-            <Route path="/" component={login}/>
-            <Route path="logout" component={login}/>
-            <Route path="App" component={App}>
-              <IndexRoute component={home}/>
-              <Route path="create" component={createRepo}/>
-              <Route path="branch" component={Branch}/>
-              <Route path="branchpath" component={TestSettings}/>
-              <Route path="temp" component={BuildReport}/>
-              <Route path="test" component={TestSettings}/>
-            </Route>
-        </Router>
-   </MuiThemeProvider>
+   <MuiThemeProvider muiTheme={muiTheme}>
+       <Router history={hashHistory}>
+           <Route path="/" component={login}/>
+           <Route path="logout" component={login}/>
+           <Route path="App" component={App}>
+             <IndexRoute component={home}/>
+             <Route path="create" component={createRepo}/>
+             <Route path="branch" component={Branch}/>
+             <Route path="branchpath" component={TestSettings}/>
+             <Route path="temp" component={BuildReport}/>
+             <Route path="test" component={TestSettings}/>
+           </Route>
+       </Router>
+  </MuiThemeProvider>
 , document.querySelector("#root"));

@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 .App {
   text-align: center;
 }
@@ -7,33 +9,15 @@
   height: 75px;
   border-radius: 50px;
 }
+>>>>>>> 78de479bb453a62aa04760008fd6e95754ff7f9b
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-/* For Header */
-
-/* For footer*/
-#bloc1, #bloc2
+body
 {
-    display:inline;
-
+  margin-top: 80px;
+  font-family: 'Roboto', sans-serif;
 }
-#bloc1{
-  float: left;
-}
+<<<<<<< HEAD
+=======
 #bloc2{
   float: right;
 }
@@ -61,22 +45,15 @@ width: 80%;
 margin-left: 50px;
 }
 /*For BuildReport*/
+>>>>>>> 78de479bb453a62aa04760008fd6e95754ff7f9b
 .listbox
 {
-margin-top: 40px;
-margin-bottom: 100px;
+  margin-top: 20px;
+  margin-bottom: 100px;
 }
-.dialog
-{
-	
-	padding: 10px;
+h2,h1,h4{
+font-family: 'Roboto', sans-serif;
 }
-.paper
-{
-	padding: 20px;
-	
-}
-.head
-{
-	margin-top: 100px;
+.tabs b{
+  font-family: 'Oswald', sans-serif;
 }
