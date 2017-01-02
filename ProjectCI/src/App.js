@@ -8,13 +8,13 @@ class App extends Component {
     console.log("hello");
     return (
              <div>
-                <Header />
+               
 
                 <div className="main" >
                     {this.props.children}
                 </div>
 
-                <Footer />
+               
             </div>
     );
   }
