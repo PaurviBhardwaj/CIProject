@@ -80,3 +80,9 @@ margin-bottom: 100px;
 {
 	margin-top: 100px;
 }
+h2,h1,h4{
+font-family: 'Roboto', sans-serif;
+}
+.tabs b{
+  font-family: 'Oswald', sans-serif;
+}
