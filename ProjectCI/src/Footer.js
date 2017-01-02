@@ -31,14 +31,14 @@ export default class Footer extends React.Component {
                 color: '#FFF',
                 fontFamily: 'sans-serif',
                 fontSize: 14,
-                position: 'fixed',bottom:0, left: 0, right: 0 
+                bottom:0, left: 0, right: 0 
             }
         };
         return (
             <footer style={styles.mainStyles}>
                 <Grid>
                     <Row center="xs">
-                        <Col xs={4}><b>JARVIS</b></Col>
+                        <Col xs={4}><b>KI</b></Col>
                         <Col xs={4}>Copyright @ 2016</Col>  
                         <Col xs={4}>Connect Us on : 
                             <a href='#'><Facebook /></a>

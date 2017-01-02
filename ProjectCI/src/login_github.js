@@ -57,7 +57,7 @@ class login extends React.Component {
       		</div>
 
           
-          <div style={{backgroundImage: 'url(' +backgroundImg+ ')', marginTop:10}}>
+          <div style={{backgroundImage: 'url(' +backgroundImg+ ')'}}>
           <Grid>
           <Row center="xs">
                   <Card>
