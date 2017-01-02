@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 .App {
   text-align: center;
 }
@@ -9,15 +8,12 @@
   height: 75px;
   border-radius: 50px;
 }
->>>>>>> 78de479bb453a62aa04760008fd6e95754ff7f9b
 
 body
 {
-  margin-top: 80px;
   font-family: 'Roboto', sans-serif;
 }
-<<<<<<< HEAD
-=======
+
 #bloc2{
   float: right;
 }
@@ -45,7 +41,6 @@ width: 80%;
 margin-left: 50px;
 }
 /*For BuildReport*/
->>>>>>> 78de479bb453a62aa04760008fd6e95754ff7f9b
 .listbox
 {
   margin-top: 20px;

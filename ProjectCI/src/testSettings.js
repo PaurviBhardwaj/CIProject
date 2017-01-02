@@ -16,14 +16,7 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 import './App.css';
 import {Grid, Row, Col} from 'react-flexbox-grid';
 
-const styles={
-  next:{
-    marginBottom:80,
-  },
-  top:{
-    marginTop:80
-  }
-};
+
 const muiTheme = getMuiTheme({
  palette: {
    textColor: white,
@@ -46,7 +39,7 @@ npm install
 # npm install -g grunt-cli`
     return(
       <Paper>
-        <p style={styles.top}> 
+        <p> 
         <Grid>
           <Row>
             <Col xs={12}>
@@ -196,7 +189,7 @@ npm install
       <Row>
         <Col xs={12}>
           <Row center="xs">
-            <Col xs={12}><IndexLink to="/App/temp" activeClassName="active"><RaisedButton label="Save and go to dashboard" primary={true} style={styles.next}></RaisedButton></IndexLink>
+            <Col xs={12}><IndexLink to="/App/temp" activeClassName="active"><RaisedButton label="Save and go to dashboard" primary={true} ></RaisedButton></IndexLink>
             </Col>
           </Row>
        </Col>
